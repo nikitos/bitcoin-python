@@ -13,21 +13,11 @@ http://laanwj.github.com/bitcoin-python/doc/
 Installation instructions
 ===========================
 
-bitcoin-python uses setuptools for the install script. There are no dependencies apart from Python itself.
+You can install it using pip directly from this repo
 
 ::
 
-  $ python setup.py build
-  $ python setup.py install
-
-Pypi / Cheeseshop
-==================
-
-It is possible to install the package through Pypi (cheeseshop), see http://pypi.python.org/pypi?:action=display&name=bitcoin-python
-
-::
-
-  $ pip install bitcoin-python
+  $ pip install git+https://github.com/nikitos/bitcoin-python.git
 
 TODO
 ======

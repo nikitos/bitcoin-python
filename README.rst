@@ -1,19 +1,6 @@
 bitcoin-python is a set of Python libraries that allows easy access to the
 bitcoin peer-to-peer cryptocurrency client API.
 
-Not actively maintained
-===========================
-bitcoin-python is not actively maintained. I don't have the mental bandwidth
-to maintain it and good alternatives have sprung up over time.
-
-I'd suggest python-bitcoinlib (https://github.com/petertodd/python-bitcoinlib )
-as is the ultimate python bitcoin library. It offers not only RPC access but
-also a Python version of almost every bitcoin data structure.
-
-The RPC is can be used through `bitcoin.rpc.Proxy`, see for example
-https://github.com/petertodd/python-bitcoinlib/blob/master/examples/make-bootstrap-rpc.py.
-
-If anyone wants to take up the maintainer role for bitcoin-python, let me know.
 
 Documentation
 ===========================

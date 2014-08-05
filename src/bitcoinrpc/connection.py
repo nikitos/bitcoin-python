@@ -618,6 +618,20 @@ class BitcoinConnection(object):
         - *address* -- Bitcoin address whose private key should be returned.
         """
         return self.proxy.dumpprivkey(address)
+        
+    def importprivkey(self, privkey, label="myprivkey"):
+        """
+        Imports private key.
+
+        Arguments:
+
+        - *privkey* -- Bitcoin private key.
+        """
+        try:
+        	self.proxy.importprivkey(privkey, label)
+        	return True
+        except BitcoinException as exception:
+        	return False
 
     def signmessage(self, address, message):
         """

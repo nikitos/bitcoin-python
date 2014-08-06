@@ -37,6 +37,10 @@ USER_AGENT = "AuthServiceProxy/0.1"
 
 HTTP_TIMEOUT = 30
 
+def EncodeDecimal(o):
+    if isinstance(o, decimal.Decimal):
+        return round(o, 8)
+    raise TypeError(repr(o) + " is not JSON serializable")
 
 class JSONRPCException(Exception):
     def __init__(self, rpc_error):
@@ -116,7 +120,7 @@ class RPCMethod(object):
                 'method': self._method_name,
                 'params': args,
                 'id': self._service_proxy._id_counter}
-        postdata = json.dumps(data)
+        postdata = json.dumps(data, default=EncodeDecimal)
         resp = self._service_proxy._transport.request(postdata)
         resp = json.loads(resp, parse_float=decimal.Decimal)
 

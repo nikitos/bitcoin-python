@@ -120,7 +120,7 @@ class RPCMethod(object):
                 'method': self._method_name,
                 'params': args,
                 'id': self._service_proxy._id_counter}
-        postdata = json.dumps(data, default=EncodeDecimal, ensure_ascii=False, encoding='utf8')
+        postdata = json.dumps(data, default=EncodeDecimal, ensure_ascii=False)
         resp = self._service_proxy._transport.request(postdata)
         resp = json.loads(resp, parse_float=decimal.Decimal)
 

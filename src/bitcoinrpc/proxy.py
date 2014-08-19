@@ -70,9 +70,10 @@ class HTTPTransport(object):
     def request(self, serialized_data):
         self.connection.request('POST', self.parsed_url.path, serialized_data,
                                 {'Host': self.parsed_url.hostname,
+                                 'Accept-Encoding' : 'UTF-8',
                                  'User-Agent': USER_AGENT,
                                  'Authorization': self.auth_header,
-                                 'Content-type': 'application/json'})
+                                 'Content-type': 'application/json; charset=UTF-8'})
 
         httpresp = self.connection.getresponse()
         if httpresp is None:
